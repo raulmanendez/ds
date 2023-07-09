@@ -13,7 +13,7 @@ class Node {
 
 public class DLinkList {
 
-	private Node head=null;
+	Node head=null;
 	
 	void add(int data) {
 		Node newNode=new Node(data);
@@ -76,34 +76,5 @@ public class DLinkList {
 		
 		
 		return false;
-	}
-	
-	static DLinkList mergeList(DLinkList first,DLinkList second) {
-		DLinkList merged=new DLinkList();
-		
-		Node firstHead=first.head;
-		Node secondHead=second.head;
-		
-		while(firstHead!=null && secondHead!=null) {
-			if(firstHead.data < secondHead.data) {
-				merged.add(firstHead.data);
-				firstHead=firstHead.next;
-			} else {
-				merged.add(secondHead.data);
-				secondHead=secondHead.next;
-			}
-		}
-		
-		while(firstHead!=null) {
-			merged.add(firstHead.data);
-			firstHead=firstHead.next;
-		}
-		
-		while(secondHead!=null) {
-			merged.add(secondHead.data);
-			secondHead=secondHead.next;
-		}
-		
-		return merged;
-	}
+	}	
 }
