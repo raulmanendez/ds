@@ -9,6 +9,18 @@ class Node {
 	Node(int data) {
 		this.data=data;
 	}
+	
+	
+	void print() {
+		Node current=this;
+		StringJoiner joiner=new StringJoiner(",", "[", "]");
+		
+		while(current!=null) {
+			joiner.add(String.valueOf(current.data));
+			current=current.next;
+		}
+		System.out.println(joiner);
+	}
 }
 
 public class DLinkList {
