@@ -12,7 +12,7 @@ public class RemoveDuplicates {
 			
 			System.out.println("current::"+current.data+" next ::"+current.next.data);
 			
-			if(current.next!=null && current.data == current.next.data) {
+			if(current.data == current.next.data) {
 				System.out.println("EQUAL");
 				current.next=current.next.next;
 			} else {
