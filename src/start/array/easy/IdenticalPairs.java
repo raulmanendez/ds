@@ -1,4 +1,4 @@
-package start.array;
+package start.array.easy;
 
 public class IdenticalPairs {
 
