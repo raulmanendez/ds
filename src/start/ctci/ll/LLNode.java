@@ -10,6 +10,11 @@ public class LLNode {
 	public LLNode(int value) {
 		this.value=value;
 	}
+	
+	public LLNode(LLNode node) {
+		this.value=node.value;
+		this.next=node.next;
+	}
 
 	public LLNode(int value,LLNode next) {
 		this.value=value;
@@ -34,12 +39,15 @@ public class LLNode {
 	
 	
 	public void print() {
+		int count=10;//to avoid recursion
 		LLNode current=this;
 		StringJoiner joiner=new StringJoiner(",","[","]");
 		while(current!=null) {
 			joiner.add(current.getValue()+"");
 			
 			current=current.next;
+			
+			if(count--==0) break;
 		}
 		
 		System.out.println(joiner.toString());

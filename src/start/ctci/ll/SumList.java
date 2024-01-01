@@ -78,7 +78,7 @@ public class SumList {
 		return node;
 	}
 	
-	private static int length(LLNode node) {
+	public static int length(LLNode node) {
 		int size=0;
 		
 		LLNode runner=node;
