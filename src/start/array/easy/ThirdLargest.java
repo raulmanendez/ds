@@ -4,9 +4,9 @@ public class ThirdLargest {
 
 	public static int thirdMax(int[] nums) {
 int t=nums[0],s=nums[0],f=nums[0];
-		
+
 		for(int i=1;i<nums.length;i++) {
-			
+
 			if(nums[i] > t) {
 				f=s;
 				s=t;
@@ -18,7 +18,7 @@ int t=nums[0],s=nums[0],f=nums[0];
 				f=nums[i];
 			}
 		}
-		
+
 		return t;
 	}
 

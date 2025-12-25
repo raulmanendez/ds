@@ -20,28 +20,28 @@ public class KthLast {
 
 	public static int KthLastV2(LLNode node, int k) {
 		if(node==null) return 0;
-		
+
 		int index=KthLastV2(node.next, k) + 1;
 		if(index==k)
 			System.out.println("value at kth last is::"+node.value);
 		return index;
 	}
-	
+
 	public static LLNode KthLastV3(LLNode node, int k) {
 		Idx idx=new Idx();
 		return KthLastV3(node, k, idx);
 	}
-	
+
 	public static LLNode KthLastV3(LLNode head, int k,Idx idx) {
 		if(head==null) return null;
-		
+
 		LLNode node=KthLastV3(head.next, k, idx);
 		idx.value = idx.value + 1;
-		
+
 		if(idx.value==k) {
 			return head;
 		}
-		
+
 		return node;
 	}
 
@@ -69,7 +69,7 @@ public class KthLast {
 		//System.out.println("Kth Node is :" + result.value);
 
 		//KthLastV2(node, 4);
-		
+
 		LLNode resultRecursive=KthLastV3(node, 4);
 		System.out.println("recursive result::"+resultRecursive.value);
 

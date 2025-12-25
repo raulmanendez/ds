@@ -2,10 +2,10 @@ package start.ctci.tree;
 
 public class TestBinaryTree {
 
-	
+
 	public static void main(String[] args) {
 		BinaryTree tree=new BinaryTree();
-		
+
 		tree.add(2);
 		tree.add(3);
 		tree.add(1);
@@ -15,7 +15,7 @@ public class TestBinaryTree {
 		tree.add(6);
 		tree.add(4);
 		tree.add(7);
-		
+
 		System.out.println(tree.inOrder());
 	}
 }

@@ -5,8 +5,8 @@ public class PalindromeNumber {
 	public static boolean isPalindrome(int x) {
 
 		if(x < 0) return false;
-		
-		int next = x, quotient = 0, reversed = 0;;
+
+		int next = x, quotient = 0, reversed = 0;
 		while (next != 0) {
 			quotient = next % 10;
 

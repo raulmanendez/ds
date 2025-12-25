@@ -13,17 +13,17 @@ public class ArrayToBST {
 		int mid = (left + right) / 2;
 
 		TreeNode root = new TreeNode(nums[mid]);
-		
-		
-		
+
+
+
 		if(left <= right) {
 			//System.out.println(left+" and "+right+" and root:"+root.val);
-			
+
 			//System.out.println("Going left for root:"+root.val);
 			TreeNode leftNode = createNode(left, mid - 1, nums);
 			root.left = leftNode;
 			//System.out.println("Left="+leftNode.val+" for "+root.val);
-			
+
 
 			//System.out.println("Going Right for root:"+root.val);
 			TreeNode rightNode = createNode(mid + 1, right, nums);
@@ -32,17 +32,17 @@ public class ArrayToBST {
 		} else {
 			return null;
 		}
-		
+
 		//System.out.println("Returning for"+root.val);
-		
+
 		return root;
 	}
 
 	public static void main(String[] args) {
 		int arr[]=new int[] {-10,-3,0,5,9};
-		
+
 		TreeNode node=sortedArrayToBST(arr);
-		
+
 		node.print(node);
 	}
 }
@@ -67,9 +67,9 @@ class TreeNode {
 	}
 
 	void print(TreeNode node) {
-		
+
 		System.out.println("ROOT:"+node.val);
-		
+
 		if (node.left != null) {
 			System.out.print("ROOT:"+node.val+" 's left is:"+node.left.val+"\t");
 
@@ -82,7 +82,7 @@ class TreeNode {
 			print(node.right);
 		}
 
-		
+
 
 	}
 }

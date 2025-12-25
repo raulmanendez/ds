@@ -11,13 +11,13 @@ public class RotateMatrix {
 
 		for (int layer = 0; layer < n / 2; layer++) {
 
-			
-			
+
+
 			int first = layer;
 			int last = n - 1 - layer;
 
 			System.out.println("layer and first::"+layer+" and last::"+last);
-			
+
 			for (int i = first; i < last; i++) {
 
 				int offset = i - first;

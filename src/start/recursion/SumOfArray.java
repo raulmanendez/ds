@@ -8,7 +8,7 @@ public class SumOfArray {
 		else
 			return arr[start] + sum(arr, start+1);
 	}
-	
+
 	public static void main(String[] args) {
 		int arr[]= {1,2,3,4,5};//15
 		System.out.println("Sum of array elements::"+sum(arr,0));

@@ -7,15 +7,15 @@ public class MiddleOfLinkedList {
 	public static Node findMiddle(Node head) {
 		Node slow=head;
 		Node fast=head;
-		
+
 		while(fast!=null && fast.next!=null) {
-			
+
 			slow=slow.next;
 			fast=fast.next.next;
 		}
 		return slow;
 	}
-	
+
 	public static void main(String[] args) {
 		DLinkList list=new DLinkList();
 		list.add(1);
@@ -24,7 +24,7 @@ public class MiddleOfLinkedList {
 		list.add(4);
 		list.add(5);
 		list.add(6);
-		
+
 		Node node=findMiddle(list.head);
 		System.out.println("Middle node is::"+node.data);
 	}

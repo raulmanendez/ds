@@ -1,10 +1,5 @@
 package start.array.easy;
 
-import java.util.Collections;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -21,13 +16,13 @@ import java.util.stream.Stream;
 
 public class CountOccurence {
 
-	
+
 	public static void main(String[] args) {
-		
+
 		String test="methenl";
-		
-	
-		
-		
+
+
+
+
 	}
 }

@@ -11,15 +11,15 @@ public class Fibonacci {
 			return 1;
 		else return fibonacci(num - 1) + fibonacci(num - 2);
 	}
-	
+
 	public static void main(String[] args) {
 		System.out.println("Fibonacci of 10 numbers is::");
-		
+
 		StringJoiner joiner=new StringJoiner(",","[","]");
 		for(int i=1;i<=10;i++) {
 			joiner.add(fibonacci(i)+"");
 		}
-		
+
 		System.out.println(joiner);
 	}
 }

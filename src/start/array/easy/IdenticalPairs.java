@@ -15,7 +15,7 @@ public class IdenticalPairs {
         }
         return count;
     }
-	
+
 	//optimized
 	public static int numIdenticalPairs(int[] A) {
 		int ans = 0, cnt[] = new int[101];

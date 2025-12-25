@@ -13,29 +13,29 @@ public class SortAStack {
 			}
 			temp.push(removed);
 		}
-		
+
 		while(!temp.isEmpty())
 			stack.push(temp.pop());
 	}
-	
-	
+
+
 	public static void main(String[] args) {
-		
-		MyStack<Integer> stack=new MyStack<Integer>();
+
+		MyStack<Integer> stack=new MyStack<>();
 		stack.push(10);
 		stack.push(1);
 		stack.push(11);
 		stack.push(4);
 		stack.push(16);
-		
+
 		sort(stack);
-		
-		StringJoiner joiner=new StringJoiner(","); 
+
+		StringJoiner joiner=new StringJoiner(",");
 		while(!stack.isEmpty()) {
 			joiner.add(stack.pop()+"");
 		}
-		
+
 		System.out.println(joiner);
-		
+
 	}
 }
