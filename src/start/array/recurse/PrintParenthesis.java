@@ -47,7 +47,7 @@ public class PrintParenthesis {
 	}
 
 	public void getre(char arr[],List<String> result,int l,int r,int index) {
-		System.out.println(String.valueOf(arr)+" left:"+l+" right:"+r);
+		System.out.println(" left:"+l+" right:"+r+String.valueOf(arr));
 		if(l< 0 || l > r) return;
 
 		if(l==0 && r==0) {

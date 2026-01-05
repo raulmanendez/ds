@@ -6,10 +6,12 @@ import java.util.List;
 public class PermutationsWithoutDups {
 
 	public List<String> getPerm(String str) {
+		
+		System.out.println(str);
 		if(str==null) return null;
 
 		List<String> permutations=new ArrayList<>();
-		if(str.length()==1) {
+		if(str.length()==0) {
 			permutations.add("");
 			return permutations;
 		}
@@ -18,6 +20,7 @@ public class PermutationsWithoutDups {
 		String remaining=str.substring(1);
 		List<String> words=getPerm(remaining);
 
+		
 		for(String p:words) {
 
 			for(int i=0;i<=p.length();i++) {
@@ -26,8 +29,8 @@ public class PermutationsWithoutDups {
 				String end=p.substring(i);
 				String res=start+removed+end;
 
+				System.out.println("for str => "+str+" words=>"+words +" permutations =>"+permutations+"adding to perm=>"+res);
 				permutations.add(res);
-
 			}
 		}
 
@@ -40,7 +43,7 @@ public class PermutationsWithoutDups {
 
 
 		System.out.println(
-				test.getPerm("abcd")
+				test.getPerm("abc")
 				);
 	}
 }
