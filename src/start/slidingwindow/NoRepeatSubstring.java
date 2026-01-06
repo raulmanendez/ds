@@ -13,14 +13,14 @@ public class NoRepeatSubstring {
 
 			char endChar = s.charAt(end);
 			
-			if (fm.containsKey(endChar)) {
-				start = end;
-				fm.clear();
+			if(fm.containsKey(endChar)) {
+			
+				start = Math.max(start, fm.get(endChar) + 1);
 			}
-			fm.put(endChar, 0);
-
+			
+			fm.put(endChar, end);
+			
 			maxLength = Math.max(maxLength, end - start + 1);
-			System.out.println("endChar=>" + endChar + " maxLength=" + maxLength + " fm=>" + fm);
 		}
 
 		return maxLength;
