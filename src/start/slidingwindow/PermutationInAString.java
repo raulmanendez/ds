@@ -27,7 +27,7 @@ public class PermutationInAString {
 			if (matched == pMap.size())
 				result.add(start);
 
-			if(start - end + 1 > pattern.length()) {
+			if(end - start + 1 > pattern.length()) {
 				char startChar = s.charAt(start);
 				start++;
 				
