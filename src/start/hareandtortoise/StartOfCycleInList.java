@@ -2,7 +2,7 @@ package start.hareandtortoise;
 
 public class StartOfCycleInList {
 
-	static LLNode<Integer> hasCycle(LLNode<Integer> node) {
+	static LLNode<Integer> findCycle(LLNode<Integer> node) {
 
 		LLNode<Integer> slow = node;
 		LLNode<Integer> fast = node;
@@ -13,20 +13,43 @@ public class StartOfCycleInList {
 			fast = fast.next.next;
 
 			if (slow.equals(fast)) {
-
-				LLNode<Integer> current = slow;
-
-				while (true) {
-					if (current.next.equals(slow)) {
-						return current;
-					}
-					current = current.next;
-				}
+				int length = findLength(slow);
+				return findStart(node, length);
 			}
 
 		}
 
 		return null;
+	}
+
+	static int findLength(LLNode<Integer> node) {
+		LLNode<Integer> current = node;
+
+		int length = 0;
+		while (true) {
+			current = current.next;
+			length++;
+			if (node.equals(current))
+				break;
+		}
+
+		return length;
+	}
+
+	static LLNode<Integer> findStart(LLNode<Integer> node, int length) {
+		LLNode<Integer> pointerOne = node;
+		LLNode<Integer> pointerTwo = node;
+		while (length > 0) {
+			pointerOne = pointerOne.next;
+			length--;
+		}
+
+		while (!pointerOne.equals(pointerTwo)) {
+			pointerOne = pointerOne.next;
+			pointerTwo = pointerTwo.next;
+		}
+
+		return pointerOne;
 	}
 
 	public static void main(String[] args) {
@@ -37,8 +60,8 @@ public class StartOfCycleInList {
 		node1.next.next = new LLNode<Integer>(3);
 		node1.next.next.next = new LLNode<Integer>(4);
 		node1.next.next.next.next = new LLNode<Integer>(5);
-		node1.next.next.next.next.next = node1;// cycle
+		node1.next.next.next.next.next = node1.next.next;// cycle of length =34
 
-		System.out.println(StartOfCycleInList.hasCycle(node1));
+		System.out.println(StartOfCycleInList.findCycle(node1));
 	}
 }
