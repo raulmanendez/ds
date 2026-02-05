@@ -8,17 +8,13 @@ public class SmallestSubarray {
 		for (int right = 0; right < arr.length; right++) {
 
 			sum += arr[right];
+			while (sum >= targetSum) {
+				mink = Math.min(right - left + 1, mink);
 
-			if (sum >= targetSum) {
-
-				while (sum >= targetSum) {
-					mink = Math.min(right - left + 1, mink);
-
-					sum -= arr[left];
-					left++;
-				}
-
+				sum -= arr[left];
+				left++;
 			}
+
 		}
 
 		return mink;
