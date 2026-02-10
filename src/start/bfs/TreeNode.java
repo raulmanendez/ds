@@ -2,8 +2,10 @@ package start.bfs;
 
 public class TreeNode {
 
-	int value;
-	TreeNode left,right;
+	public int value;
+	public TreeNode left;
+	public TreeNode right;
+	public TreeNode next;
 	
 	public TreeNode(int value) {
 		this.value = value;

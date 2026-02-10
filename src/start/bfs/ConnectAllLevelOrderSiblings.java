@@ -4,30 +4,29 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.StringJoiner;
 
-public class ConnectLevelOrderSiblings {
+public class ConnectAllLevelOrderSiblings {
 
-	static List<TreeNode> connectSiblings(TreeNode root) {
+	static void connectSiblings(TreeNode root) {
 		List<TreeNode> result = new ArrayList<>();
 		if (root == null)
-			return result;
+			return;
 
 		Queue<TreeNode> q = new LinkedList<TreeNode>();
 		q.offer(root);
+		TreeNode prev = null;
 
 		while (!q.isEmpty()) {
 			int levelSize = q.size();
 
-			TreeNode prev = null;
 			for (int i = 0; i < levelSize; i++) {
 				TreeNode current = q.poll();
-				
-				if(prev==null)
+
+				if (prev == null)
 					result.add(current);
 				else
 					prev.next = current;
-				
+
 				prev = current;
 
 				if (current.left != null)
@@ -37,57 +36,22 @@ public class ConnectLevelOrderSiblings {
 					q.offer(current.right);
 			}
 		}
-		
-		return result;
 	}
-	
-	static void withExtraSpace(TreeNode root) {
-		var results = connectSiblings(root);
-		
-		for(var node : results) {
-			
-			StringJoiner joiner = new StringJoiner(",");
-			joiner.add(node.value+"");
-			
-			var current = node.next;
-			while(current!=null) {
-				joiner.add(current.value+"");
-				current = current.next;
-			}
-			
-			System.out.println(joiner);
-			
-		}
-	}
-	
+
 	static void withoutExtraSpace(TreeNode root) {
 		connectSiblings(root);
-		
-		TreeNode nextRoot = root;
-		while(nextRoot!=null) {
-			TreeNode current = nextRoot;
-			nextRoot=null;
-			
-			while(current!=null) {
-				System.out.print(current.value+" ");
-				
-				if(nextRoot == null) {
-					if(current.left!=null)
-						nextRoot =current.left;
-					else if(current.right!=null)
-						nextRoot =current.right;
-				}
-				
-				current = current.next;
-			}
-			System.out.println();
+
+		TreeNode current = root;
+		while (current != null) {
+			System.out.print(current.value + " ");
+			current = current.next;
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
 		/*
-		 * 12 1, 7 9, 10, 5 17, 20
+		 * 12 | 7,1 | 9,10,5 | 20,17
 		 */
 
 		TreeNode root = new TreeNode(12);
@@ -101,11 +65,8 @@ public class ConnectLevelOrderSiblings {
 
 		root.right.left.left = new TreeNode(20);
 		root.right.left.right = new TreeNode(17);
-		
-		//withExtraSpace(root);
-		
+
 		withoutExtraSpace(root);
-		
-		
+
 	}
 }
