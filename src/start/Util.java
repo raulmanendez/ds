@@ -7,6 +7,20 @@ import java.util.StringJoiner;
 
 public class Util {
 
+	public static void print(int its[][]) {
+		StringJoiner joiner = new StringJoiner(",", "[", "]");
+		for(int arr[]:its) {
+			StringJoiner innerjoiner = new StringJoiner(",", "[", "]");
+			joiner.add("\n");
+			for(int element:arr) {
+				innerjoiner.add(element+"");
+			}
+			
+			joiner.add(innerjoiner.toString());
+		}
+		System.out.println(joiner);
+	}
+	
 	public static void print(int its[]) {
 		StringJoiner joiner = new StringJoiner(",", "[", "]");
 		for(Object it:its) {
