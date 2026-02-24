@@ -1,4 +1,4 @@
-package start;
+package start.kth;
 
 import java.util.PriorityQueue;
 
