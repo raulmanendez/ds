@@ -20,7 +20,7 @@ public class LLNode<T> {
 		return value.equals(((LLNode<T>)obj).value);
 	}
 	
-	String full() {
+	public String full() {
 		StringJoiner sj= new StringJoiner("->");
 		sj.add(value.toString());
 		LLNode<T> current = next;
