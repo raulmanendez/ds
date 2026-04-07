@@ -14,7 +14,7 @@ public class SerializeNDeSerializeTree {
 		serialize(root, list);
 		StringBuilder sb = new StringBuilder();
 		for (String ch : list) {
-			sb.append(ch + ",");
+			sb.append(ch).append(",");
 		}
 
 		return sb.toString();
@@ -42,7 +42,6 @@ public class SerializeNDeSerializeTree {
 	
 		if("#".equals(result[currentIndex])) return null;
 	
-		System.out.println(result[currentIndex]);
 		TreeNode root = new TreeNode(Integer.parseInt(result[currentIndex]));
 		currentIndex++;
 		root.left = deserialize(result);
@@ -67,7 +66,6 @@ public class SerializeNDeSerializeTree {
 
 		String serialized = serialize(root); 
 		System.out.println("serialized => "+serialized);
-		
 		
 		TreeNode deserialized = deserialize(serialized.split(","));
 		deserialized.inorder();
